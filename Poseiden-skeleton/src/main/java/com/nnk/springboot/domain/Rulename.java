@@ -7,7 +7,6 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "rulename")
 public class Rulename {
-    // TODO: Map columns in data table RULENAME with corresponding java fields
     @Id
     @Column(name="Id")
     @GeneratedValue(strategy = GenerationType.AUTO)
