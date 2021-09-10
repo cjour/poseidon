@@ -1,11 +1,8 @@
 package com.nnk.springboot.domain;
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -14,7 +11,6 @@ import java.util.Date;
 @Entity
 @Table(name = "curvepoint")
 public class CurvePoint {
-    // TODO: Map columns in data table CURVEPOINT with corresponding java fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -22,26 +18,24 @@ public class CurvePoint {
     @NotNull
     private Integer curveId;
 
-    private Date asOfDate;
+    private Timestamp asOfDate;
 
     @Digits(integer = 10, fraction = 2)
     @Min(value = 1)
     @NotNull
     private Double term;
 
-
-
     @Digits(integer = 10, fraction = 2)
     @Min(value = 1)
     @NotNull
     private Double value;
 
-    private Date creationDate;
+    private Timestamp creationDate;
 
     public CurvePoint() {
     }
 
-    public CurvePoint(Integer id, Integer curveId, Date asOfDate, Double term, Double value, Date creationDate) {
+    public CurvePoint(Integer id, Integer curveId, Timestamp asOfDate, Double term, Double value, Timestamp creationDate) {
         this.id = id;
         this.curveId = curveId;
         this.asOfDate = asOfDate;
@@ -70,7 +64,7 @@ public class CurvePoint {
         return asOfDate;
     }
 
-    public void setAsOfDate(Date asOfDate) {
+    public void setAsOfDate(Timestamp asOfDate) {
         this.asOfDate = asOfDate;
     }
 
@@ -94,7 +88,7 @@ public class CurvePoint {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
 
