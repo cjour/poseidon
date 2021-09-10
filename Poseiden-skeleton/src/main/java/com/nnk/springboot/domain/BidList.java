@@ -1,8 +1,5 @@
 package com.nnk.springboot.domain;
 
-import org.hibernate.validator.constraints.Length;
-import org.springframework.beans.factory.annotation.Required;
-
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -18,7 +15,7 @@ public class BidList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "BidListId")
-    private Integer id;
+    private Integer bidListId;
 
     @NotBlank(message = "Account is mandatory")
     private String account;
@@ -39,7 +36,7 @@ public class BidList {
 
     private String benchmark;
 
-    private Date bidListDate;
+    private Timestamp bidListDate;
 
     private String commentary;
 
@@ -53,11 +50,11 @@ public class BidList {
 
     private String creationName;
 
-    private Date creationDate;
+    private Timestamp creationDate;
 
     private String revisionName;
 
-    private Date revisionDate;
+    private Timestamp revisionDate;
 
     private String dealName;
 
@@ -70,8 +67,8 @@ public class BidList {
     public BidList() {
     }
 
-    public BidList(Integer id, String account, String type, Double bidQuantity, Double askQuantity, Double bid, Double ask, String benchmark, Date bidListDate, String commentary, String security, String status, String trader, String book, String creationName, Date creationDate, String revisionName, Date revisionDate, String dealName, String dealType, String sourceListId, String side) {
-        this.id = id;
+    public BidList(Integer bidListId, String account, String type, Double bidQuantity, Double askQuantity, Double bid, Double ask, String benchmark, Timestamp bidListDate, String commentary, String security, String status, String trader, String book, String creationName, Timestamp creationDate, String revisionName, Timestamp revisionDate, String dealName, String dealType, String sourceListId, String side) {
+        this.bidListId = bidListId;
         this.account = account;
         this.type = type;
         this.bidQuantity = bidQuantity;
@@ -95,12 +92,12 @@ public class BidList {
         this.side = side;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getBidListId() {
+        return bidListId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setBidListId(Integer bidListId) {
+        this.bidListId = bidListId;
     }
 
     public String getAccount() {
@@ -159,11 +156,11 @@ public class BidList {
         this.benchmark = benchmark;
     }
 
-    public Date getBidListDate() {
+    public Timestamp getBidListDate() {
         return bidListDate;
     }
 
-    public void setBidListDate(Date bidListDate) {
+    public void setBidListDate(Timestamp bidListDate) {
         this.bidListDate = bidListDate;
     }
 
@@ -215,11 +212,11 @@ public class BidList {
         this.creationName = creationName;
     }
 
-    public Date getCreationDate() {
+    public Timestamp getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -231,11 +228,11 @@ public class BidList {
         this.revisionName = revisionName;
     }
 
-    public Date getRevisionDate() {
+    public Timestamp getRevisionDate() {
         return revisionDate;
     }
 
-    public void setRevisionDate(Date revisionDate) {
+    public void setRevisionDate(Timestamp revisionDate) {
         this.revisionDate = revisionDate;
     }
 
