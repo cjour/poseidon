@@ -15,7 +15,7 @@ public class Trade {
     // TODO: Map columns in data table TRADE with corresponding java fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer tradeId;
 
     @NotBlank
     private String account;
@@ -36,7 +36,7 @@ public class Trade {
 
     private String benchmark;
 
-    private Date tradeDate;
+    private Timestamp tradeDate;
 
     private String security;
 
@@ -48,11 +48,11 @@ public class Trade {
 
     private String creationName;
 
-    private Date creationDate;
+    private Timestamp creationDate;
 
     private String revisionName;
 
-    private Date revisionDate;
+    private Timestamp revisionDate;
 
     private String dealName;
 
@@ -65,12 +65,12 @@ public class Trade {
     public Trade() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getTradeId() {
+        return tradeId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setTradeId(Integer tradeId) {
+        this.tradeId = tradeId;
     }
 
     public String getAccount() {
@@ -133,7 +133,7 @@ public class Trade {
         return tradeDate;
     }
 
-    public void setTradeDate(Date tradeDate) {
+    public void setTradeDate(Timestamp tradeDate) {
         this.tradeDate = tradeDate;
     }
 
@@ -181,7 +181,7 @@ public class Trade {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -197,7 +197,7 @@ public class Trade {
         return revisionDate;
     }
 
-    public void setRevisionDate(Date revisionDate) {
+    public void setRevisionDate(Timestamp revisionDate) {
         this.revisionDate = revisionDate;
     }
 
