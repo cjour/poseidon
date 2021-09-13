@@ -1,6 +1,7 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
@@ -8,17 +9,21 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "rating")
 public class Rating {
-    // TODO: Map columns in data table RATING with corresponding java fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotBlank
     private String moodysRating;
 
+    @NotBlank
     private String sandPRating;
 
+    @NotBlank
     private String fitchRating;
 
+    @Digits(integer = Integer.MAX_VALUE, fraction = 1)
+    @NotNull
     private Integer orderNumber;
 
     public Rating() {

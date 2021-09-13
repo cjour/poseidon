@@ -38,7 +38,17 @@
 				</tr>
 			</thead>
 			<tbody>
-			<!-- TODO: Show all Rating to the table, the Action column will have Edit & Delete buttons -->
+			<tr th:each="rating: ${listOfRating}">
+				<th th:text="${rating.id}"></th>
+				<th th:text="${rating.moodysRating}"></th>
+				<th th:text="${rating.sandPRating}"></th>
+				<th th:text="${rating.fitchRating}"></th>
+				<th th:text="${rating.orderNumber}"></th>
+				<th>
+					<a th:href=@{/rating/update/{id}(id=${rating.id})} class="btn btn-primary btn-sm">Edit</a>
+					<a th:href=@{/rating/delete/{id}(id=${rating.id})} class="btn btn-danger btn-sm">Delete</a>
+				</th>
+			</tr>
 			</tbody>
 		</table>
 	</div>
