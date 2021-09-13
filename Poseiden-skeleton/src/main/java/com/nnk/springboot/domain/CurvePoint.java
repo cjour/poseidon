@@ -1,12 +1,7 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import java.sql.Timestamp;
-import java.util.Date;
-
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "curvepoint")
@@ -15,10 +10,10 @@ public class CurvePoint {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Digits(integer = Integer.MAX_VALUE, fraction = 0)
+    @Min(value = 1)
     @NotNull
     private Integer curveId;
-
-    private Timestamp asOfDate;
 
     @Digits(integer = 10, fraction = 2)
     @Min(value = 1)
@@ -30,18 +25,14 @@ public class CurvePoint {
     @NotNull
     private Double value;
 
-    private Timestamp creationDate;
-
     public CurvePoint() {
     }
 
-    public CurvePoint(Integer id, Integer curveId, Timestamp asOfDate, Double term, Double value, Timestamp creationDate) {
+    public CurvePoint(Integer id, Integer curveId, Double term, Double value) {
         this.id = id;
         this.curveId = curveId;
-        this.asOfDate = asOfDate;
         this.term = term;
         this.value = value;
-        this.creationDate = creationDate;
     }
 
     public Integer getId() {
@@ -60,14 +51,6 @@ public class CurvePoint {
         this.curveId = curveId;
     }
 
-    public Date getAsOfDate() {
-        return asOfDate;
-    }
-
-    public void setAsOfDate(Timestamp asOfDate) {
-        this.asOfDate = asOfDate;
-    }
-
     public Double getTerm() {
         return term;
     }
@@ -82,14 +65,6 @@ public class CurvePoint {
 
     public void setValue(Double value) {
         this.value = value;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
     }
 
 }

@@ -58,14 +58,8 @@ public class BidListController {
     public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList,
                              BindingResult result, Model model) {
 
-        System.out.println(bidList.getBidListId());
-        System.out.println(bidList.getAccount());
-
-
         if(!result.hasErrors()) {
             bidListService.save(bidList);
-        } else {
-            return "bidList";
         }
         return "redirect:/bidList/list";
     }
