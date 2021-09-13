@@ -44,7 +44,7 @@
 					<td th:text="${trade.buyQuantity}"></td>
 					<td class="text-center">
 						<a th:href=@{/trade/update/{id}(id=${trade.id})} class="btn btn-primary btn-sm">Edit</a>
-						<a th:href=@{/trade/delete/{id}(id=${trade.id})} class="btn btn-primary btn-sm">Delete</a>
+						<a th:href=@{/trade/delete/{id}(id=${trade.id})} class="btn btn-danger btn-sm">Delete</a>
 					</td>
 				</tr>
 			</tbody>

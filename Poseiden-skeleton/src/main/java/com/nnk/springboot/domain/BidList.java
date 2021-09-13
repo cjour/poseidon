@@ -5,14 +5,13 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "bidlist")
 public class BidList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer bidListId;
+    private Integer Id;
 
     @NotBlank(message = "Account is mandatory")
     private String account;
@@ -34,19 +33,19 @@ public class BidList {
     }
 
     public BidList(Integer bidListId, String account, String type, Double bidQuantity, Double askQuantity) {
-        this.bidListId = bidListId;
+        this.Id = bidListId;
         this.account = account;
         this.type = type;
         this.bidQuantity = bidQuantity;
         this.askQuantity = askQuantity;
     }
 
-    public Integer getBidListId() {
-        return bidListId;
+    public Integer getId() {
+        return Id;
     }
 
-    public void setBidListId(Integer bidListId) {
-        this.bidListId = bidListId;
+    public void setId(Integer id) {
+        this.Id = id;
     }
 
     public String getAccount() {

@@ -68,7 +68,7 @@ public class BidListController {
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         BidList bidList = bidListService.findById(id);
         if(bidList != null) {
-            bidListService.delete(bidList.getBidListId());
+            bidListService.delete(bidList.getId());
         }
         return "redirect:/bidList/list";
     }
