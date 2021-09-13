@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "rulename")
 public class RuleName {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -30,6 +31,15 @@ public class RuleName {
     private String sqlPart;
 
     public RuleName() {
+    }
+    public RuleName(Integer id, String name, String description, String json, String template, String sqlStr, String sqlPart) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.json = json;
+        this.template = template;
+        this.sqlStr = sqlStr;
+        this.sqlPart = sqlPart;
     }
 
     public Integer getId() {

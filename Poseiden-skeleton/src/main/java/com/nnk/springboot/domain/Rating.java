@@ -29,6 +29,14 @@ public class Rating {
     public Rating() {
     }
 
+    public Rating(Integer id, String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
+        this.id = id;
+        this.moodysRating = moodysRating;
+        this.sandPRating = sandPRating;
+        this.fitchRating = fitchRating;
+        this.orderNumber = orderNumber;
+    }
+
     public Integer getId() {
         return id;
     }
