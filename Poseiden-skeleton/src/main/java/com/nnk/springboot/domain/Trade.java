@@ -12,10 +12,9 @@ import java.util.Date;
 @Entity
 @Table(name = "trade")
 public class Trade {
-    // TODO: Map columns in data table TRADE with corresponding java fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer tradeId;
+    private Integer Id;
 
     @NotBlank
     private String account;
@@ -65,12 +64,12 @@ public class Trade {
     public Trade() {
     }
 
-    public Integer getTradeId() {
-        return tradeId;
+    public Integer getId() {
+        return Id;
     }
 
-    public void setTradeId(Integer tradeId) {
-        this.tradeId = tradeId;
+    public void setId(Integer id) {
+        this.Id = id;
     }
 
     public String getAccount() {

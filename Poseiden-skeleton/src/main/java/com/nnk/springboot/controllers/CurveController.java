@@ -36,7 +36,6 @@ public class CurveController {
 
     @PostMapping("/curvePoint/validate")
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Curve list
         if (!result.hasErrors()) {
             curvePointService.save(curvePoint);
             return "redirect:/curvePoint/list";
