@@ -32,6 +32,7 @@ public class RuleName {
 
     public RuleName() {
     }
+
     public RuleName(Integer id, String name, String description, String json, String template, String sqlStr, String sqlPart) {
         this.id = id;
         this.name = name;

@@ -61,14 +61,14 @@ public class Trade {
 
     private String side;
 
+    public Trade() {
+    }
+
     public Trade(Integer id, String account, String type, Double buyQuantity) {
         Id = id;
         this.account = account;
         this.type = type;
         this.buyQuantity = buyQuantity;
-    }
-
-    public Trade() {
     }
 
     public Integer getId() {

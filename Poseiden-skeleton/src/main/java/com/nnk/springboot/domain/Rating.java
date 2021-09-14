@@ -27,6 +27,7 @@ public class Rating {
     private Integer orderNumber;
 
     public Rating() {
+
     }
 
     public Rating(Integer id, String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
