@@ -1,6 +1,5 @@
 package com.nnk.springboot.services;
 
-import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.CurvePoint;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

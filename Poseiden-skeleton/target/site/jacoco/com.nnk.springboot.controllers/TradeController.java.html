@@ -22,14 +22,14 @@ import java.util.List;
     @RequestMapping(&quot;/trade/list&quot;)
     public String home(Model model)
     {
-<span class="nc" id="L25">        List&lt;Trade&gt; listOfTrade = tradeService.findAll();</span>
-<span class="nc" id="L26">        model.addAttribute(&quot;listofTrade&quot;, listOfTrade);</span>
-<span class="nc" id="L27">        return &quot;trade/list&quot;;</span>
+<span class="fc" id="L25">        List&lt;Trade&gt; listOfTrade = tradeService.findAll();</span>
+<span class="fc" id="L26">        model.addAttribute(&quot;listofTrade&quot;, listOfTrade);</span>
+<span class="fc" id="L27">        return &quot;trade/list&quot;;</span>
     }
 
     @GetMapping(&quot;/trade/add&quot;)
     public String addUser(Trade bid) {
-<span class="nc" id="L32">        return &quot;trade/add&quot;;</span>
+<span class="fc" id="L32">        return &quot;trade/add&quot;;</span>
     }
 
     @PostMapping(&quot;/trade/validate&quot;)
@@ -43,11 +43,11 @@ import java.util.List;
 
     @GetMapping(&quot;/trade/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L46">        Trade trade = tradeService.findById(id);</span>
-<span class="nc bnc" id="L47" title="All 2 branches missed.">        if (trade != null){</span>
-<span class="nc" id="L48">            model.addAttribute(&quot;trade&quot;, trade);</span>
+<span class="fc" id="L46">        Trade trade = tradeService.findById(id);</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (trade != null){</span>
+<span class="fc" id="L48">            model.addAttribute(&quot;trade&quot;, trade);</span>
         }
-<span class="nc" id="L50">        return &quot;trade/update&quot;;</span>
+<span class="fc" id="L50">        return &quot;trade/update&quot;;</span>
     }
 
     @PostMapping(&quot;/trade/update/{id}&quot;)
@@ -61,11 +61,11 @@ import java.util.List;
 
     @GetMapping(&quot;/trade/delete/{id}&quot;)
     public String deleteTrade(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L64">        Trade trade = tradeService.findById(id);</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        if (trade != null){</span>
-<span class="nc" id="L66">            tradeService.delete(id);</span>
+<span class="fc" id="L64">        Trade trade = tradeService.findById(id);</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (trade != null){</span>
+<span class="fc" id="L66">            tradeService.delete(id);</span>
         }
-<span class="nc" id="L68">        return &quot;redirect:/trade/list&quot;;</span>
+<span class="fc" id="L68">        return &quot;redirect:/trade/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

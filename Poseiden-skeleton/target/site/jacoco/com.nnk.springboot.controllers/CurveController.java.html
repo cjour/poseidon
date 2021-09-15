@@ -24,14 +24,14 @@ import java.util.List;
     @RequestMapping(&quot;/curvePoint/list&quot;)
     public String home(Model model)
     {
-<span class="nc" id="L27">        List&lt;CurvePoint&gt; listOfCurvePoint = curvePointService.findAll();</span>
-<span class="nc" id="L28">        model.addAttribute(&quot;listOfCurvePoint&quot;, listOfCurvePoint);</span>
-<span class="nc" id="L29">        return &quot;curvePoint/list&quot;;</span>
+<span class="fc" id="L27">        List&lt;CurvePoint&gt; listOfCurvePoint = curvePointService.findAll();</span>
+<span class="fc" id="L28">        model.addAttribute(&quot;listOfCurvePoint&quot;, listOfCurvePoint);</span>
+<span class="fc" id="L29">        return &quot;curvePoint/list&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/add&quot;)
     public String addBidForm(CurvePoint bid) {
-<span class="nc" id="L34">        return &quot;curvePoint/add&quot;;</span>
+<span class="fc" id="L34">        return &quot;curvePoint/add&quot;;</span>
     }
 
     @PostMapping(&quot;/curvePoint/validate&quot;)
@@ -45,11 +45,11 @@ import java.util.List;
 
     @GetMapping(&quot;/curvePoint/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L48">        CurvePoint curvePoint = curvePointService.findById(id);</span>
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (curvePoint != null){</span>
-<span class="nc" id="L50">            model.addAttribute(&quot;curvePoint&quot;, curvePoint);</span>
+<span class="fc" id="L48">        CurvePoint curvePoint = curvePointService.findById(id);</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (curvePoint != null){</span>
+<span class="fc" id="L50">            model.addAttribute(&quot;curvePoint&quot;, curvePoint);</span>
         }
-<span class="nc" id="L52">        return &quot;curvePoint/update&quot;;</span>
+<span class="fc" id="L52">        return &quot;curvePoint/update&quot;;</span>
     }
 
     @PostMapping(&quot;/curvePoint/update/{id}&quot;)
@@ -63,11 +63,11 @@ import java.util.List;
 
     @GetMapping(&quot;/curvePoint/delete/{id}&quot;)
     public String deleteCurvePoint(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L66">        CurvePoint curvePoint = curvePointService.findById(id);</span>
-<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (curvePoint != null) {</span>
-<span class="nc" id="L68">            curvePointService.delete(curvePoint.getId());</span>
+<span class="fc" id="L66">        CurvePoint curvePoint = curvePointService.findById(id);</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        if (curvePoint != null) {</span>
+<span class="fc" id="L68">            curvePointService.delete(curvePoint.getId());</span>
         }
-<span class="nc" id="L70">        return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L70">        return &quot;redirect:/curvePoint/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

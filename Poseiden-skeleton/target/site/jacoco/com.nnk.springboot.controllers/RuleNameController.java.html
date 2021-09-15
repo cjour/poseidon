@@ -23,14 +23,14 @@ import java.util.List;
     @RequestMapping(&quot;/ruleName/list&quot;)
     public String home(Model model)
     {
-<span class="nc" id="L26">        List&lt;RuleName&gt; listOfRuleName = ruleNameService.findAll();</span>
-<span class="nc" id="L27">        model.addAttribute(&quot;listOfRuleName&quot;, listOfRuleName);</span>
-<span class="nc" id="L28">        return &quot;ruleName/list&quot;;</span>
+<span class="fc" id="L26">        List&lt;RuleName&gt; listOfRuleName = ruleNameService.findAll();</span>
+<span class="fc" id="L27">        model.addAttribute(&quot;listOfRuleName&quot;, listOfRuleName);</span>
+<span class="fc" id="L28">        return &quot;ruleName/list&quot;;</span>
     }
 
     @GetMapping(&quot;/ruleName/add&quot;)
     public String addRuleForm(RuleName bid) {
-<span class="nc" id="L33">        return &quot;ruleName/add&quot;;</span>
+<span class="fc" id="L33">        return &quot;ruleName/add&quot;;</span>
     }
 
     @PostMapping(&quot;/ruleName/validate&quot;)
@@ -44,11 +44,11 @@ import java.util.List;
 
     @GetMapping(&quot;/ruleName/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L47">        RuleName ruleName = ruleNameService.findById(id);</span>
-<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (ruleName != null){</span>
-<span class="nc" id="L49">            model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
+<span class="fc" id="L47">        RuleName ruleName = ruleNameService.findById(id);</span>
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if (ruleName != null){</span>
+<span class="fc" id="L49">            model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
         }
-<span class="nc" id="L51">        return &quot;ruleName/update&quot;;</span>
+<span class="fc" id="L51">        return &quot;ruleName/update&quot;;</span>
     }
 
     @PostMapping(&quot;/ruleName/update/{id}&quot;)
@@ -62,11 +62,11 @@ import java.util.List;
 
     @GetMapping(&quot;/ruleName/delete/{id}&quot;)
     public String deleteRuleName(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L65">        RuleName ruleName = ruleNameService.findById(id);</span>
-<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (ruleName != null){</span>
-<span class="nc" id="L67">            ruleNameService.delete(id);</span>
+<span class="fc" id="L65">        RuleName ruleName = ruleNameService.findById(id);</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if (ruleName != null){</span>
+<span class="fc" id="L67">            ruleNameService.delete(id);</span>
         }
-<span class="nc" id="L69">        return &quot;redirect:/ruleName/list&quot;;</span>
+<span class="fc" id="L69">        return &quot;redirect:/ruleName/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

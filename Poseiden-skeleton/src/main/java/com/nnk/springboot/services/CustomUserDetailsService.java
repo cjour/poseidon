@@ -21,20 +21,16 @@ public class CustomUserDetailsService implements UserDetailsService {
 	@Autowired
 	private UserRepository userRepository;
 
-
-
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Objects.requireNonNull(username);
 
-		//Getting user via Spring Data JPA
 		User user = (userRepository.findByUsername(username));
 		if (user == null){
 			throw new UsernameNotFoundException("Username" + username + "was not found");
 		}
 
-		//Get authorities
-		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
 		authorities.add(new SimpleGrantedAuthority(user.getRole()));
 
 		//Return a Spring Security User object

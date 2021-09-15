@@ -106,7 +106,6 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-security:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.0.7.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.0.4.RELEASE" level="project" />
@@ -119,5 +118,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.maven.surefire:surefire-api:2.21.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.maven.surefire:surefire-logger-api:2.21.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.maven.surefire:common-java5:2.21.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.springframework.security:spring-security-test:5.4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.0.7.RELEASE" level="project" />
   </component>
 </module>

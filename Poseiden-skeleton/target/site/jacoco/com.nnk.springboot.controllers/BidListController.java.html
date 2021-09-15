@@ -16,41 +16,43 @@ import java.util.List;
 
 
 @Controller
-<span class="fc" id="L19">public class BidListController {</span>
+public class BidListController {
 
     @Autowired
     BidListService bidListService;
 
+<span class="fc" id="L24">    public BidListController() {}</span>
+
     @RequestMapping(&quot;/bidList/list&quot;)
     public String home(Model model)
     {
-<span class="fc" id="L27">        List&lt;BidList&gt; listOfBidList = bidListService.findAll();</span>
-<span class="fc" id="L28">        model.addAttribute(&quot;listOfBidList&quot;, listOfBidList);</span>
-<span class="fc" id="L29">        return &quot;bidList/list&quot;;</span>
+<span class="fc" id="L29">        List&lt;BidList&gt; listOfBidList = bidListService.findAll();</span>
+<span class="fc" id="L30">        model.addAttribute(&quot;listOfBidList&quot;, listOfBidList);</span>
+<span class="fc" id="L31">        return &quot;bidList/list&quot;;</span>
     }
 
     @GetMapping(&quot;/bidList/add&quot;)
     public String addBidForm(BidList bid) {
-<span class="fc" id="L34">        return &quot;bidList/add&quot;;</span>
+<span class="fc" id="L36">        return &quot;bidList/add&quot;;</span>
     }
 
     @PostMapping(&quot;/bidList/validate&quot;)
     public String validate(@Valid BidList bidList, BindingResult result, Model model) {
         //Recheck interest of BindingResult class.
-<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (!result.hasErrors()) {</span>
-<span class="nc" id="L41">            bidListService.save(bidList);</span>
-<span class="nc" id="L42">            return &quot;redirect:/bidList/list&quot;;</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (!result.hasErrors()) {</span>
+<span class="nc" id="L43">            bidListService.save(bidList);</span>
+<span class="nc" id="L44">            return &quot;redirect:/bidList/list&quot;;</span>
         }
-<span class="nc" id="L44">        return &quot;bidList/add&quot;;</span>
+<span class="nc" id="L46">        return &quot;bidList/add&quot;;</span>
     }
 
     @GetMapping(&quot;/bidList/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L49">        BidList bidList = bidListService.findById(id);</span>
-<span class="nc bnc" id="L50" title="All 2 branches missed.">        if(bidList != null) {</span>
-<span class="nc" id="L51">            model.addAttribute(&quot;bidList&quot;, bidList);</span>
+<span class="fc" id="L51">        BidList bidList = bidListService.findById(id);</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if(bidList != null) {</span>
+<span class="fc" id="L53">            model.addAttribute(&quot;bidList&quot;, bidList);</span>
         }
-<span class="nc" id="L53">        return &quot;bidList/update&quot;;</span>
+<span class="fc" id="L55">        return &quot;bidList/update&quot;;</span>
     }
 
     //TODO:find out why it can't retrieve correctly the ID
@@ -58,19 +60,19 @@ import java.util.List;
     public String updateBid(@PathVariable(&quot;id&quot;) Integer id, @Valid BidList bidList,
                              BindingResult result, Model model) {
 
-<span class="nc bnc" id="L61" title="All 2 branches missed.">        if(!result.hasErrors()) {</span>
-<span class="nc" id="L62">            bidListService.save(bidList);</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        if(!result.hasErrors()) {</span>
+<span class="nc" id="L64">            bidListService.save(bidList);</span>
         }
-<span class="nc" id="L64">        return &quot;redirect:/bidList/list&quot;;</span>
+<span class="nc" id="L66">        return &quot;redirect:/bidList/list&quot;;</span>
     }
 
     @GetMapping(&quot;/bidList/delete/{id}&quot;)
     public String deleteBid(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="nc" id="L69">        BidList bidList = bidListService.findById(id);</span>
-<span class="nc bnc" id="L70" title="All 2 branches missed.">        if(bidList != null) {</span>
-<span class="nc" id="L71">            bidListService.delete(bidList.getId());</span>
+<span class="fc" id="L71">        BidList bidList = bidListService.findById(id);</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if(bidList != null) {</span>
+<span class="fc" id="L73">            bidListService.delete(bidList.getId());</span>
         }
-<span class="nc" id="L73">        return &quot;redirect:/bidList/list&quot;;</span>
+<span class="fc" id="L75">        return &quot;redirect:/bidList/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

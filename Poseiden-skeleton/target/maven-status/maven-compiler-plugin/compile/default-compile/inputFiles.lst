@@ -5,6 +5,7 @@ C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\HomeController.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\CurveController.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Trade.java
+C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\CustomUserDetailsService.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IBidListService.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\UserRepository.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\ICurvePointService.java
@@ -18,10 +19,12 @@ C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\TradeController.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\RatingRepository.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\BidListController.java
+C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\CustomUserDetails.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\RuleNameService.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\TradeService.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\UserController.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IRuleNameService.java
+C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\security\ConfigurationSecurity.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\Application.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\BidListService.java
 C:\Users\jourc\Desktop\All\Developpement\JAVA\OpenClassrooms\P7_jourdain_clement\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\User.java

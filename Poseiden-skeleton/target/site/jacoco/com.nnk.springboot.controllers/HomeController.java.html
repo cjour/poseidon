@@ -5,20 +5,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-<span class="fc" id="L8">public class HomeController</span>
-{
+<span class="fc" id="L8">public class HomeController {</span>
 	@RequestMapping(&quot;/&quot;)
 	public String home(Model model)
 	{
-<span class="nc" id="L13">		return &quot;home&quot;;</span>
+<span class="nc" id="L12">		return &quot;home&quot;;</span>
 	}
 
 	@RequestMapping(&quot;/admin/home&quot;)
 	public String adminHome(Model model)
 	{
-<span class="nc" id="L19">		return &quot;redirect:/bidList/list&quot;;</span>
+<span class="nc" id="L18">		return &quot;redirect:/bidList/list&quot;;</span>
 	}
-
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

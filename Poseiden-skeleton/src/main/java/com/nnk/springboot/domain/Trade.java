@@ -35,8 +35,6 @@ public class Trade {
 
     private String benchmark;
 
-    private Timestamp tradeDate;
-
     private String security;
 
     private String status;
@@ -47,11 +45,7 @@ public class Trade {
 
     private String creationName;
 
-    private Timestamp creationDate;
-
     private String revisionName;
-
-    private Timestamp revisionDate;
 
     private String dealName;
 
@@ -135,14 +129,6 @@ public class Trade {
         this.benchmark = benchmark;
     }
 
-    public Date getTradeDate() {
-        return tradeDate;
-    }
-
-    public void setTradeDate(Timestamp tradeDate) {
-        this.tradeDate = tradeDate;
-    }
-
     public String getSecurity() {
         return security;
     }
@@ -183,28 +169,12 @@ public class Trade {
         this.creationName = creationName;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
-    }
-
     public String getRevisionName() {
         return revisionName;
     }
 
     public void setRevisionName(String revisionName) {
         this.revisionName = revisionName;
-    }
-
-    public Date getRevisionDate() {
-        return revisionDate;
-    }
-
-    public void setRevisionDate(Timestamp revisionDate) {
-        this.revisionDate = revisionDate;
     }
 
     public String getDealName() {

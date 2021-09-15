@@ -4,6 +4,7 @@ import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,5 +43,64 @@ public class TradeTests {
 		tradeRepository.delete(trade);
 		Optional<Trade> tradeList = tradeRepository.findById(id);
 		Assert.assertFalse(tradeList.isPresent());
+	}
+
+	@Test
+	public void test() {
+		String account = "Account test";
+		String type = "Type test";
+		Double buyQuantity = 10d;
+		Double sellQuantity = 11d;
+		Double buyPrice = 12d;
+		Double sellPrice = 13d;
+		String benchmark = "Bench test";
+		String security = "Secu Test";
+		String status = "STAT";
+		String trader = "Trader  test";
+		String book = "Book test";
+		String creationName = "Creation";
+		String revisionName = "Rev test";
+		String dealName = "Deal test";
+		String dealType = "Deal type";
+		String sourceListId = "SourceId";
+		String side = "Side";
+
+		Trade trade = new Trade();
+
+		trade.setAccount(account);
+		trade.setType(type);
+		trade.setBuyQuantity(buyQuantity);
+		trade.setSellQuantity(sellQuantity);
+		trade.setBuyPrice(buyPrice);
+		trade.setSellPrice(sellPrice);
+		trade.setBenchmark(benchmark);
+		trade.setSecurity(security);
+		trade.setStatus(status);
+		trade.setTrader(trader);
+		trade.setBook(book);
+		trade.setCreationName(creationName);
+		trade.setRevisionName(revisionName);
+		trade.setDealName(dealName);
+		trade.setDealType(dealType);
+		trade.setSourceListId(sourceListId);
+		trade.setSide(side);
+
+
+		Assert.assertEquals("account", account, trade.getAccount());
+		Assert.assertEquals("type", type, trade.getType());
+		Assert.assertEquals("buyQuantity", buyQuantity, trade.getBuyQuantity());
+		Assert.assertEquals("sellQuantity", sellQuantity, trade.getSellQuantity());
+		Assert.assertEquals("buyPrice", buyPrice, trade.getBuyPrice());
+		Assert.assertEquals("sellPrice", sellPrice, trade.getSellPrice());
+		Assert.assertEquals("benchmark", benchmark, trade.getBenchmark());
+		Assert.assertEquals("security", security, trade.getSecurity());
+		Assert.assertEquals("status", status, trade.getStatus());
+		Assert.assertEquals("trader", trader, trade.getTrader());
+		Assert.assertEquals("book", book, trade.getBook());
+		Assert.assertEquals("creationName", creationName, trade.getCreationName());
+		Assert.assertEquals("revisionName", revisionName, trade.getRevisionName());
+		Assert.assertEquals("dealName", dealName, trade.getDealName());
+		Assert.assertEquals("dealType", dealType, trade.getDealType());
+		Assert.assertEquals("sourceIdList", sourceListId, trade.getSourceListId());
 	}
 }
