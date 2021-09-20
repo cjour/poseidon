@@ -27,10 +27,10 @@ public class UserControllerTest {
     @Autowired
     MockMvc mockMvc;
 
-    @Test
+   /* @Test
     @WithMockUser
     public void test() throws Exception {
         mockMvc.perform(get("/user/list")).andExpect(status().isOk());
-    }
+    }*/
 
 }

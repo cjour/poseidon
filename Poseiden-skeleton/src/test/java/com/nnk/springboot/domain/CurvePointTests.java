@@ -1,10 +1,10 @@
 
 package com.nnk.springboot.domain;
 
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,6 +43,23 @@ public class CurvePointTests {
 		curvePointRepository.delete(curvePoint);
 		Optional<CurvePoint> curvePointList = curvePointRepository.findById(id);
 		Assert.assertFalse(curvePointList.isPresent());
+	}
+
+	@Test
+	public void getters_should_return_values_set_through_setters(){
+		CurvePoint curvePoint = new CurvePoint();
+		Integer id = 1;
+		Double term = 2.0D;
+		Double value = 3.0D;
+
+
+		curvePoint.setId(id);
+		curvePoint.setTerm(term);
+		curvePoint.setValue(value);
+
+		Assertions.assertEquals(id, curvePoint.getId());
+		Assertions.assertEquals(term, curvePoint.getTerm());
+		Assertions.assertEquals(value, curvePoint.getValue());
 	}
 
 }

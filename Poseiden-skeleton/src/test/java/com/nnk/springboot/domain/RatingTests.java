@@ -4,6 +4,7 @@ import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.repositories.RatingRepository;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,5 +43,24 @@ public class RatingTests {
 		ratingRepository.delete(rating);
 		Optional<Rating> ratingList = ratingRepository.findById(id);
 		Assert.assertFalse(ratingList.isPresent());
+	}
+
+	@Test
+	public void getters_should_return_values_set_through_setters(){
+		Rating rating = new Rating();
+		Integer id = 1;
+		String moodysRating = "moodysRatingTest";
+		String sandPRating = "sandPRatingTest";
+		String fitchRating = "fitchRatingTest";
+
+		rating.setId(id);
+		rating.setMoodysRating(moodysRating);
+		rating.setSandPRating(sandPRating);
+		rating.setFitchRating(fitchRating);
+
+		Assertions.assertEquals(id, rating.getId());
+		Assertions.assertEquals(moodysRating, rating.getMoodysRating());
+		Assertions.assertEquals(sandPRating, rating.getSandPRating());
+		Assertions.assertEquals(fitchRating, rating.getFitchRating());
 	}
 }

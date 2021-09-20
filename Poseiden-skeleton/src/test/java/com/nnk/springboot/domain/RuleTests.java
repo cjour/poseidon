@@ -4,6 +4,7 @@ import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,5 +43,24 @@ public class RuleTests {
 		ruleNameRepository.delete(rule);
 		Optional<RuleName> ruleList = ruleNameRepository.findById(id);
 		Assert.assertFalse(ruleList.isPresent());
+	}
+
+	@Test
+	public void getters_should_return_values_set_through_setters(){
+		RuleName rulename = new RuleName();
+		Integer id = 1;
+		String description = "descriptionTest";
+		String template = "templateTest";
+		String sqlStr = "sqlStr";
+
+		rulename.setId(id);
+		rulename.setDescription(description);
+		rulename.setTemplate(template);
+		rulename.setSqlStr(sqlStr);
+
+		Assertions.assertEquals(id, rulename.getId());
+		Assertions.assertEquals(description, rulename.getDescription());
+		Assertions.assertEquals(template, rulename.getTemplate());
+		Assertions.assertEquals(sqlStr, rulename.getSqlStr());
 	}
 }

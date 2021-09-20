@@ -71,22 +71,11 @@ public class BidListControllerTest {
         mockMvc.perform(get("/bidList/add")).andExpect(status().isOk());
     }
 
-//    @Ignore
-//    @Test
-//    @WithAnonymousUser
-//    public void test8() throws Exception {
-//        BidList bidList = new BidList(1, "testAccount", "testType", 1d,1d);
-//        mockMvc.perform(post("/bidList/validate").flashAttr("bidList", bidList)).andExpect(status().isOk());
-//    }
-//
-//    @Ignore
-//    @Test
-//    @WithMockUser
-//    public void test7() throws Exception {
-//        BidList bidList = new BidList(1, "", "testType", 1d,1d);
-//        mockMvc.perform(post("/bidList/validate").flashAttr("bidList", bidList))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    public void test8() throws Exception {
+        BidList bidList = new BidList(1, "testAccount", "testType", 1d,1d);
+        mockMvc.perform(post("/bidList/validate").flashAttr("bidList", bidList)).andExpect(status().isForbidden());
+    }
 
     @Test
     @WithMockUser

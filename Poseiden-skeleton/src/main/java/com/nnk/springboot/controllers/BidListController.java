@@ -38,7 +38,6 @@ public class BidListController {
 
     @PostMapping("/bidList/validate")
     public String validate(@Valid BidList bidList, BindingResult result, Model model) {
-        //Recheck interest of BindingResult class.
         if (!result.hasErrors()) {
             bidListService.save(bidList);
             return "redirect:/bidList/list";

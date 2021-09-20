@@ -33,8 +33,13 @@ public class UserController {
     }
 
     @PostMapping("/user/validate")
-    public String validate(@Valid User user, BindingResult result, Model model) {
+    public String validate(@Valid User user, BindingResult result, Model model) throws Exception {
         if (!result.hasErrors()) {
+           User userExist = userRepository.findByUsername(user.getUsername());
+           if (userExist.getUsername().equals(user.getUsername())){
+               throw new Exception("Username is already taken, please consider an another username to sign in");
+           }
+
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
             user.setPassword(encoder.encode(user.getPassword()));
             userRepository.save(user);

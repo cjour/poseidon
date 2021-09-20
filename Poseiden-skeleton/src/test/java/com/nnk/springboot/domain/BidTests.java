@@ -3,6 +3,7 @@ package com.nnk.springboot.domain;
 import com.nnk.springboot.repositories.BidListRepository;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,6 +43,25 @@ public class BidTests {
 		bidListRepository.delete(bid);
 		Optional<BidList> bidList = bidListRepository.findById(id);
 		Assert.assertFalse(bidList.isPresent());
+	}
+
+	@Test
+	public void getters_should_return_values_set_through_setters(){
+		BidList bidList = new BidList();
+		Integer id = 1;
+		String account = "account";
+		String type = "type";
+		Double askQuantity = 1.0D;
+
+		bidList.setId(id);
+		bidList.setAccount(account);
+		bidList.setType(type);
+		bidList.setAskQuantity(askQuantity);
+
+		Assertions.assertEquals(id, bidList.getId());
+		Assertions.assertEquals(account, bidList.getAccount());
+		Assertions.assertEquals(type, bidList.getType());
+		Assertions.assertEquals(askQuantity, bidList.getAskQuantity());
 	}
 }
 

@@ -64,6 +64,7 @@ public class TradeTests {
 		String dealType = "Deal type";
 		String sourceListId = "SourceId";
 		String side = "Side";
+		Integer id = 1;
 
 		Trade trade = new Trade();
 
@@ -84,6 +85,7 @@ public class TradeTests {
 		trade.setDealType(dealType);
 		trade.setSourceListId(sourceListId);
 		trade.setSide(side);
+		trade.setId(id);
 
 
 		Assert.assertEquals("account", account, trade.getAccount());
@@ -102,5 +104,9 @@ public class TradeTests {
 		Assert.assertEquals("dealName", dealName, trade.getDealName());
 		Assert.assertEquals("dealType", dealType, trade.getDealType());
 		Assert.assertEquals("sourceIdList", sourceListId, trade.getSourceListId());
+		Assert.assertEquals("side", side, trade.getSide());
+		Assert.assertEquals("id", id, trade.getId());
+
+
 	}
 }
