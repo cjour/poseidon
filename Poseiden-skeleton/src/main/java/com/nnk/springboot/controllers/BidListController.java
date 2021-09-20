@@ -21,6 +21,7 @@ import java.util.List;
 public class BidListController {
 
     private static final Logger LOGGER = LogManager.getLogger(BidListController.class);
+
     @Autowired
     BidListService bidListService;
 

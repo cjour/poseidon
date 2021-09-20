@@ -4,6 +4,8 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.services.CurvePointService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,9 @@ import java.util.List;
 
 @Controller
 public class CurveController {
+
+    private static final Logger LOGGER = LogManager.getLogger(CurveController.class);
+
     @Autowired
     CurvePointService curvePointService;
 
@@ -26,11 +31,13 @@ public class CurveController {
     {
         List<CurvePoint> listOfCurvePoint = curvePointService.findAll();
         model.addAttribute("listOfCurvePoint", listOfCurvePoint);
+        LOGGER.info("CurvePointController (home) -> " + listOfCurvePoint.size() + "curvePoint(s) found");
         return "curvePoint/list";
     }
 
     @GetMapping("/curvePoint/add")
     public String addBidForm(CurvePoint bid) {
+        LOGGER.info("CurvePointController (add) -> add form retrieved");
         return "curvePoint/add";
     }
 
@@ -38,7 +45,10 @@ public class CurveController {
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
         if (!result.hasErrors()) {
             curvePointService.save(curvePoint);
+            LOGGER.info("CurvePointController (validate) -> curvePoint saved");
             return "redirect:/curvePoint/list";
+        } else {
+            LOGGER.info("CurvePointController (validate) -> invalid fields values");
         }
         return "curvePoint/add";
     }
@@ -48,6 +58,9 @@ public class CurveController {
         CurvePoint curvePoint = curvePointService.findById(id);
         if (curvePoint != null){
             model.addAttribute("curvePoint", curvePoint);
+            LOGGER.info("CurvePointController (update) -> curvePoint found");
+        } else {
+            LOGGER.info("CurvePointController (update) -> curvePoint couldn't be found");
         }
         return "curvePoint/update";
     }
@@ -57,6 +70,9 @@ public class CurveController {
                              BindingResult result, Model model) {
         if (!result.hasErrors()){
             curvePointService.save(curvePoint);
+            LOGGER.info("CurvePointController (validate) -> curvePoint updated");
+        } else {
+            LOGGER.info("CurvePointController (validate) -> curvePoint couldn't be updated");
         }
         return "redirect:/curvePoint/list";
     }
@@ -66,6 +82,9 @@ public class CurveController {
         CurvePoint curvePoint = curvePointService.findById(id);
         if (curvePoint != null) {
             curvePointService.delete(curvePoint.getId());
+            LOGGER.info("CurvePointController (delete) -> curvePoint deleted");
+        } else {
+            LOGGER.info("CurvePointController (delete) -> curvePoint couldn't be deleted");
         }
         return "redirect:/curvePoint/list";
     }
