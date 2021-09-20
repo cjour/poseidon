@@ -26,12 +26,8 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.
 				authorizeRequests()
-				.antMatchers("/login").permitAll()
-				.antMatchers("/bidList/**").hasAuthority("USER").anyRequest().authenticated()
-				.antMatchers("/ruleName/**").hasAuthority("USER").anyRequest().authenticated()
-				.antMatchers("/curve/**").hasAuthority("USER").anyRequest().authenticated()
-				.antMatchers("/trade/**").hasAuthority("USER").anyRequest().authenticated()
-				.antMatchers("/user/**").hasAuthority("ADMIN").anyRequest().authenticated()
+				.antMatchers("/bidList/**", "/ruleName/**", "/curve/**","/trade/**","/rating/**" ).hasAnyAuthority("USER", "ADMIN")
+				.antMatchers("/user/**").hasAuthority("ADMIN")
 				.and()
 				.formLogin()
 				.failureUrl("/login?error")
